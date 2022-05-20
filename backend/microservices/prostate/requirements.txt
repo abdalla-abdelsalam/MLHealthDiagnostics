@@ -1,0 +1,10 @@
+fastapi==0.73.0
+pydantic==1.8.2
+uvicorn==0.16.0
+Jinja2==3.0.3
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+python-multipart

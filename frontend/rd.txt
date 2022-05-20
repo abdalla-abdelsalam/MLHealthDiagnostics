@@ -1,0 +1,7 @@
+enable-migrations
+add-migration +name like add-migration init
+update-database
+
+DESKTOP-0BNRNGG\SQLEXPRESS
+
+DESKTOP-EUE8ULJ\SQLEXPRESS

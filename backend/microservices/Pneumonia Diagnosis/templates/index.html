@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Deployment</title>
+</head>
+<body>
+    <center><h1>Model Deployment</h1></center>
+    <p>
+        <center>
+            Choose Your Image
+        </center> 
+    </p>
+    <p>
+        <center>
+            <form action="/pred" method="POST" enctype="multipart/form-data">
+            <!-- <input type="image" src="" alt=""> -->
+            <!-- <input type="text" name="name" placeholder="Enter name"> -->
+            <input type="file" name="img">
+            <input type="submit" value="Submit">
+            </form>
+        </center>
+    </p>
+</body>
+</html>

@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ngin-deployment
+  labels:
+    app: ngin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ngin
+  template:
+    metadata:
+      labels:
+        app: ngin
+    spec:
+      containers:
+      - name: ngin
+        image: nginx
+        ports:
+        - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ngin-service
+  labels:
+    app: ngin
+spec:
+  selector:
+    app:  ngin
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8096
+      targetPort: 8080
+      nodePort: 30010

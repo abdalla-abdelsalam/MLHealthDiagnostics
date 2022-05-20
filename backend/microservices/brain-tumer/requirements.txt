@@ -1,0 +1,6 @@
+Flask
+imutils
+matplotlib
+numpy
+opencv_python
+tensorflow

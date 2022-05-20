@@ -1,0 +1,103 @@
+﻿@model WebApplication1.Models.RegisterViewModel
+
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Easiest Way to Add Input Masks to Your Forms</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Content/registration/assets/css/style.css">
+</head>
+<body>
+    <div class="registration-form">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-icon">
+                <span><i class="icon icon-user"></i></span>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control item" id="UserName" name="UserName" placeholder="Username">
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control item" id="Password" name="Password" placeholder="Password">
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control item" id="PasswordConfirmed" name="PasswordConfirmed" placeholder="Confirm Password">
+                @Html.ValidationMessageFor(model => model.PasswordConfirmed, "", new { @class = "text-danger" })
+            </div>
+            @*added*@
+            <div class="form-group">
+                <input type="text" class="form-control item" id="Address" name="Address" placeholder="Address">
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="UserNationalID" name="UserNationalID" placeholder="User NationalID">
+                @Html.ValidationMessageFor(model => model.UserNationalID, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="Email" name="Email" placeholder="Email">
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="PhoneNumber" name="PhoneNumber" placeholder="Phone Number">
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="date" class="form-control item" id="UserBarthDate" name="UserBarthDate" placeholder="Birth Date">
+                @Html.ValidationMessageFor(model => model.UserBarthDate, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-wrapper">
+                <select id="Gender" name="Gender" class="form-control item">
+                    <option disabled="disabled" selected="selected">Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                @*<div class="select-dropdown"></div>*@
+            </div>
+            @*<div class="form-group">
+
+                        <input type="submit" value="Create" class="btn btn-block create-account" />
+
+                </div>*@
+            <div class="form-group">
+                <button type="submit" class="btn btn-block create-account">Create Account</button>
+            </div>
+            <div class="form-group">
+                <p class="text-center">Already have an account?  <a href="/Account/Login" id="signin">Login here</a></p>
+            </div>
+
+        }
+
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="/Content/registration/assets/js/script.js"></script>
+</body>
+</html>
+
+
+
+
+@*<div class="social-media">
+        <h5>Sign up with social media</h5>
+        <div class="social-icons">
+            <a href="#"><i class="icon-social-facebook" title="Facebook"></i></a>
+            <a href="#"><i class="icon-social-google" title="Google"></i></a>
+            <a href="#"><i class="icon-social-twitter" title="Twitter"></i></a>
+        </div>
+    </div>*@

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebApplication1.ViewModel.DockerImagesNameViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+                    <section class="py-5">
+                        <div class="container px-4 px-lg-5 mt-5">
+                            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+                                @foreach (var item in Model)
+                                {
+                                    <div class="col mb-3">
+                                        <div class="card ">
+                                            <img class="card-img-top" src="~/Content/Images/256378210_1994299374062040_1355521714266689226_n.jpg" alt="..." height="320px" />
+                                            <div class="card-body p-4">
+                                                <div class="text-center">
+                                                    <h5 class="fw-bolder"> @Html.DisplayFor(modelItem => item.label_name)</h5>
+                                                </div>
+                                                <ul class="list-group list-group-flush">
+                                                   
+                                                    
+                                                </ul>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="@Url.Action("UserGetImagesIP","DockerImage", new { id = item.label_name})"> More Details(User) </a></div>
+                                            </div>
+                                        </div>
+                                    </div>}
+
+
+
+                            </div>
+                        </div>
+
+                    </section>
+                    @*<div class="container">
+
+
+                        <table class="table">
+                            <tr>
+                                <th>
+                                    @Html.DisplayName("DeploymentName")
+                                </th>
+                                <th></th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.label_name)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Use", "UserGetImagesIP", "DockerImage", new { id = item.label_name }, "")
+                                    </td>
+                                </tr>
+                            }
+
+                        </table>*@
+
+

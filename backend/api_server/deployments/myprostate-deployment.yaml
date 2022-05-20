@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myprostate-deployment
+  labels:
+    app: myprostate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myprostate
+  template:
+    metadata:
+      labels:
+        app: myprostate
+    spec:
+      containers:
+      - name: myprostate
+        image: mahdyy/prostate
+        ports:
+        - containerPort: 5000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myprostate-service
+  labels:
+    app: myprostate
+spec:
+  selector:
+    app:  myprostate
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8099
+      targetPort: 5000
+      nodePort: 30013

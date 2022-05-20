@@ -1,0 +1,67 @@
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+<h3>Enter Data For Prostate ..</h3>
+<div>
+  <form action="prostates"  method="POST">
+    <label for="Radius"> Radius</label>
+    <input type="text" id="Radius" name="Radius" placeholder="ُEnter  Radius.." required>
+
+    <label for="Texture"> Texture</label>
+    <input type="text" id="Texture" name="Texture" placeholder="Enter  Texture.." required>
+
+    <label for="Perimeter"> Perimeter</label>
+    <input type="text" id="Perimeter" name="Perimeter" placeholder="Enter  Perimeter.." required>
+
+    <label for="Area"> Area</label>
+    <input type="text" id="Area" name="Area" placeholder="Enter  Area.." required>
+
+    <label for="Smoothness"> Smoothness</label>
+    <input type="text" id="Smoothness" name="Smoothness" placeholder="Enter  Smoothness.." required>
+
+    <label for="Compactness">Compactness</label>
+    <input type="text" id="Compactness" name="Compactness" placeholder="Enter Compactness.." required>
+
+    <label for="Symmetry">Symmetry</label>
+    <input type="text" id="Symmetry" name="Symmetry" placeholder="Enter Symmetry.." required>
+
+    <label for="Fractal dimension">Fractal dimension</label>
+    <input type="text" id="Fractal dimension" name="Fractal_dimension" placeholder="Enter The fractal Dimension Of The .." required>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
